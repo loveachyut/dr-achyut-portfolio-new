@@ -1,15 +1,20 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { ExternalLink, Music, Play } from "lucide-react"
-import { albums } from "@/lib/assets"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { ExternalLink, Music, Play } from "lucide-react";
+import { albums } from "@/lib/assets";
+import Image from "next/image";
 
 export default function MusicPage() {
   return (
     <div className="container mx-auto px-4 py-12">
       <div className="animate-fade-in-up text-center mb-12">
-        <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4">Musical Journey</h1>
-        <p className="text-xl text-muted-foreground mb-8">Healing through melodies and therapeutic compositions</p>
+        <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4">
+          Musical Journey
+        </h1>
+        <p className="text-xl text-muted-foreground mb-8">
+          Healing through melodies and therapeutic compositions
+        </p>
 
         {/* Platform Links */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
@@ -44,13 +49,21 @@ export default function MusicPage() {
             </a>
           </Button>
           <Button variant="outline" asChild>
-            <a href="https://link.deezer.com/s/30yTnpLOvTULvWlC42PBe" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://link.deezer.com/s/30yTnpLOvTULvWlC42PBe"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <ExternalLink className="h-4 w-4 mr-2" />
               Deezer
             </a>
           </Button>
           <Button variant="outline" asChild>
-            <a href="https://tiktok.com/@loveachyut" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://tiktok.com/@loveachyut"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <ExternalLink className="h-4 w-4 mr-2" />
               TikTok
             </a>
@@ -67,9 +80,9 @@ export default function MusicPage() {
             style={{ animationDelay: `${index * 0.1}s` }}
           >
             <CardHeader className="pb-3">
-              <div className="aspect-square bg-gradient-to-br from-primary/20 to-primary/5 rounded-lg mb-4 flex items-center justify-center">
-                <img
-                  src={`/abstract-geometric-shapes.png?height=200&width=200&query=${encodeURIComponent(album.title + " album cover music")}`}
+              <div className="aspect-square bg-gradient-to-br from-primary/20 to-primary/5 rounded-lg mb-4 flex items-center justify-center overflow-hidden">
+                <Image
+                  src={album.image}
                   alt={album.title}
                   className="w-full h-full object-cover rounded-lg"
                 />
@@ -84,7 +97,9 @@ export default function MusicPage() {
               </div>
             </CardHeader>
             <CardContent className="pt-0">
-              <p className="text-sm text-muted-foreground mb-4">{album.description}</p>
+              <p className="text-sm text-muted-foreground mb-4">
+                {album.description}
+              </p>
 
               {/* YouTube Embed */}
               {album.youtubeId && (
@@ -100,12 +115,24 @@ export default function MusicPage() {
               )}
 
               <div className="flex gap-2">
-                <Button size="sm" className="flex-1">
-                  <Play className="h-4 w-4 mr-2" />
-                  Play
+                <Button size="sm" className="flex-1" variant="default" asChild>
+                  <a
+                    href={album.spotifyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Play className="h-4 w-4 mr-2" />
+                    Play
+                  </a>
                 </Button>
-                <Button size="sm" variant="outline">
-                  <ExternalLink className="h-4 w-4" />
+                <Button size="sm" variant="outline" asChild>
+                  <a
+                    href={`https://www.youtube.com/watch?v=${album.youtubeId}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <ExternalLink className="h-4 w-4" />
+                  </a>
                 </Button>
               </div>
             </CardContent>
@@ -113,5 +140,5 @@ export default function MusicPage() {
         ))}
       </div>
     </div>
-  )
+  );
 }
