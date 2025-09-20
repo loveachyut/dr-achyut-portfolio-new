@@ -282,7 +282,16 @@ export function Footer() {
             <div className="flex items-center gap-4 text-xs text-muted-foreground">
               <span className="flex items-center gap-1">
                 <Heart className="h-3 w-3 text-red-500" />
-                Made with care in Nepal
+                Designed and Developed By{" "}
+                <a
+                  href="https://abishekn.com.np/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative font-medium text-primary hover:text-primary/80 transition-colors duration-300"
+                >
+                  Abishek
+                  <span className="absolute left-0 -bottom-0.5 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                </a>
               </span>
             </div>
           </div>
