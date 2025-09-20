@@ -1,41 +1,47 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { ArrowRight, Music, Stethoscope, Heart, Edit } from "lucide-react"
-import Link from "next/link"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Music, Stethoscope, Heart, Edit } from "lucide-react";
+import Link from "next/link";
 
 export function ServicesPreview() {
   const services = [
     {
       icon: Stethoscope,
       title: "Medical Consultation",
-      description: "Comprehensive medical care with 6+ years of experience in emergency medicine and critical care.",
+      description:
+        "Comprehensive medical care with 6+ years of experience in emergency medicine and critical care.",
       category: "Medical",
     },
     {
       icon: Music,
       title: "Music Composition",
-      description: "Original therapeutic compositions and healing melodies for wellness and meditation.",
+      description:
+        "Original therapeutic compositions and healing melodies for wellness and meditation.",
       category: "Creative",
     },
     {
       icon: Heart,
       title: "Holistic Healing",
-      description: "Combining medical expertise with musical therapy for comprehensive patient care.",
+      description:
+        "Combining medical expertise with musical therapy for comprehensive patient care.",
       category: "Wellness",
     },
     {
       icon: Edit,
       title: "Audio Production",
-      description: "Professional recording, editing, and mastering services for musical projects.",
+      description:
+        "Professional recording, editing, and mastering services for musical projects.",
       category: "Creative",
     },
-  ]
+  ];
 
   return (
     <section className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 animate-fade-in-up">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">Professional Services</h2>
+          <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">
+            Professional Services
+          </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Bridging the gap between medical excellence and creative healing
           </p>
@@ -53,10 +59,14 @@ export function ServicesPreview() {
                   <service.icon className="h-8 w-8 text-primary" />
                 </div>
                 <CardTitle className="text-lg">{service.title}</CardTitle>
-                <div className="text-xs text-primary font-medium">{service.category}</div>
+                <div className="text-xs text-primary font-medium">
+                  {service.category}
+                </div>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-muted-foreground">{service.description}</p>
+                <p className="text-sm text-muted-foreground">
+                  {service.description}
+                </p>
               </CardContent>
             </Card>
           ))}
@@ -72,5 +82,5 @@ export function ServicesPreview() {
         </div>
       </div>
     </section>
-  )
+  );
 }
