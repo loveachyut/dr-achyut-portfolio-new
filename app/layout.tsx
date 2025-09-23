@@ -5,6 +5,9 @@ import { Inter, Playfair_Display } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
+import { Analytics } from '@vercel/analytics/next';
+
+
 
 const inter = Inter({
   subsets: ["latin"],
@@ -35,7 +38,8 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <div className="min-h-screen flex flex-col">
             <Header />
-            <main className="flex-1">{children}</main>
+            <main className="flex-1">{children}         <Analytics />
+</main>
             <Footer />
           </div>
         </ThemeProvider>
