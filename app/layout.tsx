@@ -38,10 +38,10 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <div className="min-h-screen flex flex-col">
             <Header />
-            <main className="flex-1">{children}         <Analytics />
-</main>
+            <main className="flex-1">{children}</main>
             <Footer />
           </div>
+           <Analytics />
         </ThemeProvider>
       </body>
     </html>
